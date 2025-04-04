@@ -1,0 +1,59 @@
+/* Stylesheet für Portfolio */
+
+/**************** Reset *****************/
+
+*, *:before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+/***************** Layout ***************/
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/**************** Typography ****************/
+
+/***************** Color *********************/
+
+
+/***************** Components *****************/
+
+.card {
+    background-color: #acacac;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+/****************** Responsive ****************/
+
+@media (min-width: 580px) {
+
+}
+
+@media (min-width: 900px) {
+
+}
+
+@media (min-width: 75rem) {
+
+    .flexbox {
+            display: flex;
+        }
+       
+}
+
+
