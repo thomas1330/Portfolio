@@ -1,0 +1,634 @@
+/* Stylesheet für Portfolio */
+
+/**************** Reset ************************/
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/***************** Typography ***********************/
+
+/* roboto-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/roboto-v47-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  
+
+/* josefin-sans-300 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: url('assets/fonts/josefin-sans-v32-latin-300.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* josefin-sans-regular - latin */
+@font-face {
+    font-display: swap; 
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/josefin-sans-v32-latin-regular.woff2') format('woff2');
+  }
+  
+  /* josefin-sans-700 - latin */
+  /* @font-face {
+    font-display: swap; 
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/josefin-sans-v32-latin-700.woff2') format('woff2'); 
+  } */
+  
+
+/* montserrat-alternates-600 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Montserrat Alternates';
+    font-style: normal;
+    font-weight: 600;
+    src: url('assets/fonts/montserrat-alternates-v17-latin-600.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* montserrat-regular - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/montserrat-v29-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+strong {
+
+    color: var(--secondary-color);
+}
+
+/***************** Variables ***********************/
+
+:root {
+    --primary-color: #00eeff;
+    --secondary-color: #faead6;
+    --background-color: #0b315a;
+    --text-color: #00eeff;
+    --border-color: #00eeffac;
+    --link-color: #00eeff;
+    --link-hover-color: #faebd7;
+    --font-size: 1rem;
+    --line-height: 1.5;
+    --border-radius: 0.25rem;
+    --box-shadow: 6px 7px 10px #00eeffaa;
+    --transition: all 0.2s ease-in-out;
+}
+
+
+/*****************  General Layout ******************/
+
+nav > ul ~ li
+
+html,
+body {
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    color: var(--text-color);
+    background-color: var(--background-color);
+
+    padding: 0;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color var(--transition);
+    display: inline-block;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+    transform: scale(1.1);
+}
+
+a:focus {
+
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+a:focus-visible,
+svg:focus-visible {
+    outline: 2px solid var(--deine-highlight-farbe);
+}
+
+a:focus:not(:focus-visible),
+svg:focus:not(:focus-visible) {
+    outline: none;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    padding: 0.5rem;
+    border-top: var(--border-color) 1px solid;
+    border-bottom: var(--border-color) 1px solid;
+}
+
+p {
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    padding: 0.3rem 0 0.3rem 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+/***************** spezific Layout *********************************************************************/
+
+.container {
+    max-width: 80rem;
+    /* maximale Breite */
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sm {
+    font-size: 0.7rem;
+}
+
+.lg {
+    font-size: 1.25rem;
+}
+
+.aw {
+    color: antiquewhite;
+}
+
+/***************** Page Regions ************************************************************************/
+
+header {
+    background-color: #0b315ade;
+    color: var(--text-color);
+    text-align: center;
+    position: sticky;
+    top: 0;
+    border-bottom: var(--border-color) 1px solid;
+    z-index: 9999;
+}
+
+main {
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+}
+
+footer {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 1rem;
+    text-align: center;
+    border-top: var(--border-color) 1px solid;
+}
+
+
+/***************** sections ****************************************************************************/
+
+section {
+    height: 95vh;
+}
+
+/* .hero {
+    height: 96vh;
+}
+
+.Person {
+    height: 96vh;
+}
+
+.Projekte {
+    height: 96vh;
+}
+
+.Profil {
+    height: 96vh;
+} */
+
+/***************** Components **************************************************************************/
+
+/******************** header **************************************/
+
+.tt_nav {
+    height: 2rem;
+    align-self: center;
+    cursor: pointer;
+    transition: stroke 0.3s ease;
+}
+
+.tt_nav:hover .st0 {
+    stroke: var(--link-hover-color);
+    fill: var(--link-hover-color);
+    transform: scale(1.03);
+}
+
+.tt_nav:hover .st1 {
+    stroke: var(--link-hover-color);
+    fill: var(--link-hover-color);
+    transform: scale(1.03);
+}
+
+.tt_nav:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.nav-bar {
+    margin-left: auto;
+    color: var(--text-color);
+    padding: 1vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-end;
+    gap: 1rem;
+    z-index: 1000;
+}
+
+/************ hero ***********************************************/
+
+h1 {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    display: none;
+}
+
+.logo {
+    height: 100%;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
+
+.tt_welcome {
+    margin: 2rem 0;
+    height: 30vh;
+    max-width: 100%;
+}
+
+.st0 {
+    fill-rule: evenodd;
+}
+
+.st0,
+.st1 {
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-miterlimit: 10;
+    stroke-width: 6px;
+}
+
+
+
+.letter {
+    transition: stroke 0.3s ease;
+    transition: fill 0.3s ease;
+  }
+  
+  .letter:hover * {
+    stroke: red; /* oder z. B. var(--hover-color) */
+    fill: red; /* oder var(--hover-fill-color) */
+  }
+
+
+
+
+
+
+/**************************** Person ****************************/
+
+.Person {
+    height: 100%;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.Kurzprofil {
+    max-width: 40%;
+}
+
+.zumVideo {
+    margin-bottom: 2rem;
+}
+
+.Vorschaubild {
+    width: 30rem;
+    border-radius: 50%;
+}
+
+.videobox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .videobox.show {
+    display: flex;
+  }
+  
+  .videobox-inner {
+    position: relative;
+    max-width: 90vw;
+    max-height: 80vh;
+  }
+  
+  .video-wrapper iframe {
+    width: 60vw;
+    aspect-ratio: 16 / 9;
+  }
+  
+  .vclose-btn {
+    position: absolute;
+    top: -2rem;
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+  
+  
+
+
+/**************************** Projekte **************************/
+
+.Projekte {
+    height: 100%;
+    padding-bottom: 2rem;
+    display: block;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  .project {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .project:hover {
+    transform: scale(1.03);
+  }
+
+.project h4 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+/*********** Lightbox ***********/
+
+.lightbox {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background:var(--background-color);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+  }
+  
+  .lightbox img {
+    max-height: 80vh;
+    max-width: 90vw;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.625rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .lightbox .controls {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .lightbox button {
+    background: none;
+    color: var(--secondary-color);
+    font-size: 2em;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2em;
+    color: var(--secondary-color);
+    cursor: pointer;
+  }
+
+/***************************** Profil ****************************************/
+
+h3 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.Profil {
+    height: 100%;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.Fertigkeiten {
+    justify-self: start;
+
+}
+
+.F {
+    width: 100%;
+    height: 100%;
+    margin-top: 1rem;
+}
+
+.Lebenslauf {
+    justify-self: end;
+
+}
+
+.L {
+    width: 100%;
+    height: 100%;
+    margin-top: 1.2rem;
+}
+
+
+/* .textbox {
+    border-radius: 5px;
+    border: var(--border-color) 1px solid;
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.w {
+    background-color: antiquewhite;
+    color: black;
+}
+
+.Teil1 {
+    width: 100%;
+    height: 70vh;
+}
+
+.circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: #00eeff 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #00eeff00;
+    box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff, 0 0 60px #00f0ff;
+} */
+
+
+
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+/*********************** nach Oben Button ***************************/
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    display: none;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    border: var(--primary-color) 1px solid;
+    border-radius: 50%;
+    padding: 15px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+  }
+  
+  #scrollToTopBtn:hover {
+    background-color: #555;
+  }
+  
+
+/****************** Responsive *****************/
+
+@media (min-width: 580px) {
+    /* Breakpoint: Mobil -> Tablet Hoch*/
+
+}
+
+@media (min-width: 900px) {}
+
+@media (min-width: 75rem) {
+
+    .flexbox {
+        display: flex;
+    }
+
+}
