@@ -115,7 +115,6 @@ strong {
 
 /*****************  General Layout ******************/
 
-nav > ul ~ li
 
 html,
 body {
@@ -193,13 +192,15 @@ img {
 /***************** spezific Layout *********************************************************************/
 
 .container {
-    max-width: 80rem;
-    /* maximale Breite */
+    max-width: 1280px;
     margin: 0 auto;
-}
-
-.flex {
+    padding: 1rem;
     display: flex;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
 }
 
 .center {
@@ -241,7 +242,6 @@ main {
 footer {
     background-color: var(--background-color);
     color: var(--text-color);
-    padding: 1rem;
     text-align: center;
     border-top: var(--border-color) 1px solid;
 }
@@ -251,23 +251,10 @@ footer {
 
 section {
     height: 95vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* .hero {
-    height: 96vh;
-}
-
-.Person {
-    height: 96vh;
-}
-
-.Projekte {
-    height: 96vh;
-}
-
-.Profil {
-    height: 96vh;
-} */
 
 /***************** Components **************************************************************************/
 
@@ -363,29 +350,31 @@ h1 {
 
 /**************************** Person ****************************/
 
-.Person {
-    height: 100%;
-    padding-bottom: 2rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
+.Person {            
+    flex-wrap: wrap;          
+    gap: 20px;                                           
+    overflow: hidden;           
+  }
+  
+  .Kurzprofil, .video {
+    flex:1;              
+  }
+
+.Kurzprofil p {
+    white-space: normal;
+    word-wrap: break-word;
+
 }
 
-.Kurzprofil {
-    max-width: 40%;
+  .video {
+    text-align: center;
 }
-
-.zumVideo {
-    margin-bottom: 2rem;
-}
-
-.Vorschaubild {
-    width: 30rem;
-    border-radius: 50%;
-}
+  
+  .Vorschaubild {                
+    border-radius: 50%;        
+    padding: 0 2rem;        
+  }
+  
 
 .videobox {
     position: fixed;
@@ -428,25 +417,25 @@ h1 {
 
 /**************************** Projekte **************************/
 
-.Projekte {
-    height: 100%;
-    padding-bottom: 2rem;
-    display: block;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+.Projekte {              
+    flex-wrap: nowrap;          
+    gap: 20px;                                      
+    overflow: hidden;    
 }
 
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: inline-block;
+    flex-wrap: nowrap; 
     gap: 20px;
+    justify-content: center;
   }
   
   .project {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 15rem;
     cursor: pointer;
     transition: transform 0.3s ease;
   }
@@ -457,8 +446,16 @@ h1 {
 
 .project h4 {
     margin-top: 10px;
-    font-size: 1.5rem;
+    white-space: nowrap;
+    max-width: 100%;
+    font-size: clamp(1rem, 5vw, 1.5rem);
     text-align: center;
+  }
+
+  .project img {
+    border-radius: 5%;
+    margin: 0.5rem;
+    padding: 0.5rem;
   }
 
 /*********** Lightbox ***********/
@@ -514,18 +511,12 @@ h1 {
 h3 {
     font-size: 1.75rem;
     line-height: 1.2;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0 1.5rem 0;
 }
 
 .Profil {
     height: 100%;
-    padding: 2rem 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
     justify-content: space-evenly;
-    align-items: center;
-
 }
 
 .Fertigkeiten {
@@ -533,21 +524,9 @@ h3 {
 
 }
 
-.F {
-    width: 100%;
-    height: 100%;
-    margin-top: 1rem;
-}
-
 .Lebenslauf {
     justify-self: end;
 
-}
-
-.L {
-    width: 100%;
-    height: 100%;
-    margin-top: 1.2rem;
 }
 
 
@@ -583,10 +562,11 @@ h3 {
 } */
 
 
-
+/*********************** footer **************************************/
 
 .social {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -619,16 +599,21 @@ h3 {
 /****************** Responsive *****************/
 
 @media (min-width: 580px) {
-    /* Breakpoint: Mobil -> Tablet Hoch*/
 
 }
 
-@media (min-width: 900px) {}
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    section {
+        height:100%;
+    }
+    .Profil {
+        align-items: normal;
+    }
+}
 
 @media (min-width: 75rem) {
-
-    .flexbox {
-        display: flex;
-    }
 
 }

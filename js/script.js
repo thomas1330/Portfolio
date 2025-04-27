@@ -3,19 +3,19 @@
 // Projektbilder – jeweils 2–3 Bilder pro Projekt
 const projects = [
   {
-    images: ["img/projekt1/1.jpg", "img/projekt1/2.jpg", "img/projekt1/3.jpg"]
+    images: ["img/projekt1/Webdesign1.webp", "img/projekt1/2.webp", "img/projekt1/3.webp"]
   },
   {
-    images: ["img/projekt2/1.jpg", "img/projekt2/2.jpg"]
+    images: ["img/projekt2/BFlyer1.webp", "img/projekt2/Broschüre1.webp"]
   },
   {
-    images: ["img/projekt3/1.jpg", "img/projekt3/2.jpg", "img/projekt3/3.jpg"]
+    images: ["img/projekt3/1.webp", "img/projekt3/2.webp", "img/projekt3/3.webp"]
   },
   {
-    images: ["img/projekt4/1.jpg", "img/projekt4/2.jpg"]
+    images: ["img/projekt4/1.webp", "img/projekt4/2.webp"]
   },
   {
-    images: ["img/projekt5/1.jpg", "img/projekt5/2.jpg", "img/projekt5/3.jpg"]
+    images: ["img/projekt5/1.webp", "img/projekt5/2.webp", "img/projekt5/3.webp"]
   }
 ];
 
@@ -63,84 +63,6 @@ function prevImage() {
   currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
   updateLightbox();
 }
-
-
-  // const projects = [
-  //   {
-  //     images: ["projektA1.jpg", "projektA2.jpg", "projektA3.jpg"],
-  //   },
-  //   {
-  //     images: ["projektB1.jpg", "projektB2.jpg"],
-  //   },
-  //   {
-  //     images: ["projektC1.jpg", "projektC2.jpg", "projektC3.jpg"],
-  //   },
-  //   {
-  //     images: ["projektD1.jpg", "projektD2.jpg"],
-  //   },
-  //   {
-  //     images: ["projektE1.jpg", "projektE2.jpg", "projektE3.jpg"],
-  //   },
-  // ];
-
-  // const gallery = document.getElementById("gallery");
-  // const lightbox = document.getElementById("lightbox");
-  // const lightboxImage = document.getElementById("lightboxImage");
-
-  // let allImages = [];
-  // let currentIndex = 0;
-
-  // // Alle Bilder in eine flache Liste umwandeln
-  // projects.forEach((project, projectIndex) => {
-  //   project.images.forEach((img, imgIndex) => {
-  //     allImages.push({
-  //       src: img,
-  //       projectIndex,
-  //       imgIndex,
-  //     });
-  //   });
-  // });
-
-  // // Galerie: Nur erstes Bild jedes Projekts anzeigen
-  // projects.forEach((project, index) => {
-  //   const div = document.createElement("div");
-  //   div.className = "project";
-  //   div.innerHTML = `
-  //     <img src="${project.images[0]}" alt="Projektbild" />
-  //   `;
-  //   // Beim Klick: Startindex des ersten Bilds finden
-  //   const startIndex = allImages.findIndex(
-  //     (img) => img.projectIndex === index && img.imgIndex === 0
-  //   );
-  //   div.addEventListener("click", () => openLightbox(startIndex));
-  //   gallery.appendChild(div);
-  // });
-
-  // function openLightbox(index) {
-  //   currentIndex = index;
-  //   updateLightbox();
-  //   lightbox.style.display = "flex";
-  // }
-
-  // function updateLightbox() {
-  //   const img = allImages[currentIndex];
-  //   lightboxImage.src = img.src;
-  // }
-
-  // function closeLightbox() {
-  //   lightbox.style.display = "none";
-  // }
-
-  // function nextImage() {
-  //   currentIndex = (currentIndex + 1) % allImages.length;
-  //   updateLightbox();
-  // }
-
-  // function prevImage() {
-  //   currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
-  //   updateLightbox();
-  // }
-
 
 
 // svg als scroll-Link !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -217,7 +139,7 @@ initSmoothScrollWithHeaderOffset();
     if (e.target === videobox) closeLightbox(); // klick auf Hintergrund schließt auch
   });
 
-  // Nach oben Button ****************************************************
+  ///////////////////////////// Nach oben Button ///////////////////////////////////
 
 
   const scrollBtn = document.getElementById("scrollToTopBtn");
